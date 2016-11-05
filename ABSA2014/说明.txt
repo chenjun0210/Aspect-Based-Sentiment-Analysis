@@ -1,0 +1,40 @@
+【任务】
+PhaseA：	（多标签）分类
+	提供评价，判断出提及的领域。如：food, service, price, ambience, anecdotes/miscellaneous 
+	如：
+		<sentence>
+        	<text>The restaurant was expensive, but the menu was great.</text>
+    	</sentence>
+ 		→ 
+		price, food
+PhaseB：	情感分类
+	提供评价和领域，判断出对应的情感极性。如：positive, negative, conflict, neutral
+	如：
+		<sentence>
+        	<text>The restaurant was expensive, but the menu was great.</text>
+			<aspectCategories>
+				<aspectCategory category="price"/>
+            	<aspectCategory category="food"/>
+        	</aspectCategories>
+    	</sentence>
+		→ 
+		price: negative, food: positive
+
+	提供评价和对象，判断出对应的情感极性。如：positive, negative, conflict, neutral
+	如：
+		<sentence>
+        	<text>Also, in using the built-in camera, my voice recording for my vlog sounds like the interplanetary transmissions in the "Star Wars" saga.</text>
+        	<aspectTerms>
+            	<aspectTerm term="built-in camera" from="19" to="34"/>
+            	<aspectTerm term="voice recording" polarity="negative" from="39" to="54"/>
+        	</aspectTerms>
+    	</sentence>
+		→ 
+		built-in camera: neutral, voice recording: negative
+
+
+
+【补充】
+具体要求请查看*guideline文件
+评测工具见*eval*文件夹（需要安装java）
+笔记本评价没有领域信息，只需要判断对象情感极性

@@ -1,0 +1,12 @@
+【评测】
+java -cp ./eval.jar Main.Aspects test.xml ref.xml
+	评价领域的P、R和F值
+	【忽略】评价对象的P、R和F值
+
+java -cp ./eval.jar Main.Polarity test.xml  ref.xml
+	评价对象极性的P、R和F值
+	评价领域极性的P、R和F值
+
+
+【补充】
+额外细节见原readme文件
